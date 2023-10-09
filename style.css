@@ -117,3 +117,15 @@ footer {
     margin-bottom: 40px;
     color: #000;
 }
+.image-container {
+    width: 200px; 
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto; 
+    text-align: center; 
+}
+
+.image-transition {
+    width: 100%; 
+    transition: transform 0.5s ease-in-out; 
+}
