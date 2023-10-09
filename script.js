@@ -1,25 +1,14 @@
-const imageElement = document.getElementById("myImage");
-const imageContainer = document.querySelector(".image-container");
+var slideIndex = 0;
+showSlides();
 
-const imageSources = [
-    "img1.jpg",
-    "img2.jpg",
-    "img3.jpg",
-    "img4.jpg",
-];
-
-let currentImageIndex = 0; 
-
-function changeImage() {
-    currentImageIndex = (currentImageIndex + 1) % imageSources.length; 
-    const newImageSrc = imageSources[currentImageIndex];
-
-
-    imageElement.classList.remove("image-transition");
-    setTimeout(function () {
-        imageElement.src = newImageSrc; 
-        imageElement.classList.add("image-transition");
-    }, 50);
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-
-setInterval(changeImage, 3000);
